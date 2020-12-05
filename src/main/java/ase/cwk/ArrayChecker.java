@@ -8,20 +8,16 @@ package ase.cwk;
 public class ArrayChecker {
   public boolean check(double[] expected, double[] actual, double maxValue, double delta) {
 
-    // Clip 'too large' values
-    for (int i = 0; i < actual.length; ++i) {
-      if (actual[i] > maxValue) {
-        actual[i] = maxValue;
-      }
-    }
-
     // Check for length differences
     if (actual.length != expected.length) {
       return false;
     }
 
-    // Check that each entry is within the expected +/- delta
+    // Clip 'too large' values
     for (int i = 0; i < actual.length; ++i) {
+      if (actual[i] > maxValue) {
+        actual[i] = maxValue;
+      }
       if (Math.abs(expected[i] - actual[i]) > delta) {
         return false;
       }
