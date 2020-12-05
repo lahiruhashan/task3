@@ -1,0 +1,2 @@
+ase/cwk/ArrayCheckerTest.java
+ ase.cwk.ArrayCheckerTest
